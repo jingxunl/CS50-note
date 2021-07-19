@@ -28,6 +28,43 @@ int main(void)
     - 第二個 argument 為開啟檔案的模式，`w`為寫入(覆寫)、`r`為讀取、`a`為新增(加入檔案末端)。
 - `fprintf()`：將內容寫入 file。
 - `fclose()`：關閉檔案。
+- `fgetc()`：取得文件的下一個字符。通常為文件的第一個字。(文件指標下一個字為文件內首個字。) __(注意：文件必須以閱讀模式 r 打開)__
+    ```c
+    FILE *ptr = fopen("file.txt", "r");
+    char ch;
+    while ((ch = fgetc(ptr)) != EOF)
+    {
+        printf("%c", ch);
+    }
+    ```
+    - This function actually read and print all the contents in the file.
+    - `EOF` means "End Of File" character.
+- `fputc()`：寫入單一字元到該檔案。 __(注意：文件必須以寫入模式 w 或新增模式 a 打開)__
+    ```c
+    FILE *ptr = fopen("file.txt", "r");
+    fputc('A', ptr);
+    ```
+- `fread()`：__(注意：文件必須以閱讀模式 r 打開)__
+    ```c
+    fread(<buffer>, <size>, <qty>, <file pointer>);
+    ```
+    - Read `<qty>` units of size `<size>` from the file pointed to and store them in memory in a buffer (usually an array) pointed to by `<buffer>`
+    ```c
+    int *arr = malloc(sizeof(int) * 10);
+    fread(arr, sizeof(int), 10, ptr);
+    ```
+    - 讀取文件中40個 bytes 並將其儲存於 `arr`。
+- `fwrite()`：__(注意：文件必須以寫入模式 w 或新增模式 a 打開)__
+    ```c
+    fwrite(<buffer>, <size>, <qty>, <file pointer>);
+    ```
+    - Write `<qty>` units of size `<size>` from the file pointed to by reading them from a buffer (usually an array) pointed to by `<buffer>`
+    ```c
+    double *arr = malloc(sizeof(double) * 80);
+    fwrite(arr, sizeof(double), 80, ptr);
+    ```
+    - 取得 `arr` 內的資訊並將其寫入檔案內。
+
 
 ## Graphics 圖片檔
 - 由於每張圖片所用的 bits 數固定，因此資訊量有限，圖片的放大是有其極限的。

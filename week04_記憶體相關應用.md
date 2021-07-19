@@ -86,15 +86,6 @@ int main(void)
 - `if (t == NULL)`：當電腦記憶體用盡，`malloc`會回傳`NULL`。
 - 使用`malloc`後務必記得`free`。
 
-## Memory Layout
-![memory_layout](./img/memory_layout.png)
-- "machine code" 與 "global variabls" 位在記憶體最上層。
-- 透過 `malloc()` 所配置的空間會位於 "heap"，並逐漸往下配置。
-- 然而，程式與函數的呼叫則會從 "stack" 開始往上疊，例如最下層的stack為`main()`，若主程式呼叫其他function，則往上疊加。
-
-## Buffer Overflow 緩衝區溢位
-- A __buffer overflow__ occurs when we go past the end of a buffer, some chunk of memory we’ve allocated like an array, and access memory we shouldn’t be.
-
 ## Swap 交換
 ```c
 #include <stdio.h>
@@ -123,6 +114,7 @@ void swap(int *a, int *b)
     - 先將x的內容暫存於`tmp`。
     - 再將y的內容置於x原本所在位置。
     - 最後將暫存的內容放入原先y所在位置。
+- __Recall__：傳入函數`swap()`內的值實際上是 pass 原始資料的「複製品」，對於此函數的 *caller* (也就是`main()` function)而言，並未改變。因此，若非傳入記憶體位址，則無法實際地交換`x`與`y`。
 
 ## scanf
 - 在 `cs50.h` 中，`get_int()`與`get_string`實際上是透過`scanf()`達成，可用於取得使用者輸入的內容。
