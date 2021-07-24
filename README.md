@@ -11,7 +11,7 @@ Lecture | Topic | Complete
 1 | C | ✅ 2021/07/04
 2 |  Arrays | ✅ 2021/07/08
 3 | Algorithms | ✅ 2021/07/13
-4 | Memory | 
+4 | Memory | ✅ 2021/07/24
 5 | Data Structures | 
 6 | Python | 
 7 | SQL | 
