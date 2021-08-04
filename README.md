@@ -12,7 +12,7 @@ Lecture | Topic | Complete
 2 |  Arrays | ✅ 2021/07/08
 3 | Algorithms | ✅ 2021/07/13
 4 | Memory | ✅ 2021/07/24
-5 | Data Structures | 
+5 | Data Structures | ✅ 2021/08/04
 6 | Python | 
 7 | SQL | 
 8 | HTML, CSS, JavaScript | 
