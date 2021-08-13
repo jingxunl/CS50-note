@@ -13,7 +13,7 @@ Lecture | Topic | Complete
 3 | Algorithms | ✅ 2021/07/13
 4 | Memory | ✅ 2021/07/24
 5 | Data Structures | ✅ 2021/08/04
-6 | Python | 
+6 | Python | ✅ 2021/08/13
 7 | SQL | 
 8 | HTML, CSS, JavaScript | 
 Extra | Security | 
